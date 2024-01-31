@@ -1,5 +1,4 @@
 # PHP Login System
-___
 
 ### Project Overview
 
