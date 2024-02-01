@@ -1,6 +1,6 @@
 <?php
 
-function getMysqli() :mysqli {
+function getMysqli(): mysqli {
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     try {
         $mysqli = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PORT);
@@ -13,7 +13,7 @@ function getMysqli() :mysqli {
     }
 }
 
-function executeQueryDB ($mysqli, string $query, array $values, $types = ""): mysqli_stmt {
+function executeQueryDB (mysqli $mysqli, string $query, array $values, string $types = ""): mysqli_stmt {
     try {
         $types = $types ?: str_repeat("s", count($values));
         $stmt = mysqli_prepare($mysqli, $query);

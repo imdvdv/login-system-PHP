@@ -3,7 +3,7 @@
 function createResetCode (int $userID): string{
 
     // Create a reset code data to change password
-    $codeData = getRandomCodeData (ONE_HOUR);
+    $codeData = getRandomCodeData(ONE_HOUR);
     $code = $codeData["code"];
     $codeHash = $codeData["codeHash"];
     $codeExpiry = $codeData["codeExpiry"];

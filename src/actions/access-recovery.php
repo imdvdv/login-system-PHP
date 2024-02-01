@@ -36,7 +36,7 @@ if ($method === "POST"){
                 // Generate and send an email with a link to the password change page using the built-in mail function
                 $to = $email;
                 $subject = "Password recovery";
-                $message = 'To reset a password and create new - <a href="http://localhost/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
+                $message = 'To reset a password and create new - <a href="http://{YOUR HOST}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
                 $headers = "From: YOUR SENDER EMAIL ADDRESS\r\n";
                 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 

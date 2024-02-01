@@ -37,7 +37,7 @@ function validateFile (string $key, array $file, array $params = VALIDATION_PARA
     return true;
 }
 
-function validateCode (string $code, $params = VALIDATION_PARAMS["code"]) :bool{
+function validateCode (string $code, array $params = VALIDATION_PARAMS["code"]) :bool{
     preg_match($params["pattern"], $code) ? $isValid = true : $isValid = false;
     return $isValid;
 }
@@ -61,7 +61,7 @@ function isAuthorized (): bool {
 }
 
 // For creating user auth token and password reset code
-function getRandomCodeData ($expirationDate = null): array{
+function getRandomCodeData (string $expirationDate = null): array{
     $code = bin2hex(random_bytes(16));
     $codeHash = hash("sha256", $code);
     $codeData =  [
@@ -130,13 +130,13 @@ function setOldValues(array $fields): void {
     }
 }
 
-function getOldValue(string $key, $defaultValue = "") {
+function getOldValue(string $key, $defaultValue = ""): mixed {
     $value = $_SESSION["response"]["old_values"][$key] ?? $defaultValue;
     unset($_SESSION["response"]["old_values"][$key]);
     return $value;
 }
 
-function addInvalidClass(string $key) {
+function addInvalidClass(string $key): string {
     return isset($_SESSION["response"]["errors"][$key]) ? "invalid" : "";
 }
 

@@ -46,7 +46,7 @@ if (isAuthorized()){
                         </div>
                         <button type="submit" class="form__button form__button_editor">Save</button>
                     </form>
-                    <form action="/recovery" class="profile__action" method="post">
+                    <form action="/src/actions/access-recovery.php" class="profile__action" method="post">
                         <input hidden type="text" name="email" value="<?=$user_email?>">
                         <button role="button" class="profile__button profile__button_change-password">
                             <i class="fa-solid fa-pen-to-square"></i> Change password
