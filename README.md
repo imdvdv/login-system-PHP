@@ -54,6 +54,7 @@ const DB_HOST = "{your DB Host}", // "localhost" for local server
     DB_PORT = "3306";
 ```
 4. Configure email sending using sendmail.
+   
     4.1 Paste YOUR HOST value or domain name your project into the address bar in the access-recovery.php file.(localhost for example)
     ```php
       // Generate and send an email with a link to the password change page using the built-in mail function
