@@ -58,8 +58,8 @@ if ($method === "POST"){
                     header("Location: /pages/profile.php"); // redirect to profile
                     exit;
                 }
-                $_SESSION["response"]["message"] = "Incorrect email or password";
             }
+            $_SESSION["response"]["message"] = "Incorrect email or password";
         }
         setOldValue("email", $email);
         setOldValue("password", $password);

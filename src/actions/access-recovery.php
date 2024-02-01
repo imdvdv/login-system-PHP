@@ -37,7 +37,7 @@ if ($method === "POST"){
                 $to = $email;
                 $subject = "Password recovery";
                 $message = 'To reset a password and create new - <a href="http://{YOUR HOST}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
-                $headers = "From: YOUR SENDER EMAIL ADDRESS\r\n";
+                $headers = "From: ADMIN\r\n";
                 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
                 if (!mail($to, $subject, $message, $headers)){
