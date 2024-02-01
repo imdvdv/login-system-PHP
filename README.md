@@ -1,5 +1,4 @@
 # PHP Login System
-___
 
 ### Project Overview
 
@@ -59,7 +58,8 @@ const DB_HOST = "your DB Host", // "localhost" for local server
     ```php
       $headers = "From: YOUR SENDER EMAIL ADDRESS\r\n";
     ```
-    4.2 Download and unzip the sendmail.zip from a trusted source if it doesn't exist in your development environment
+    4.2 Download and unzip the sendmail.zip from a trusted source if it doesn't exist in your development environment.
+   
     4.3 Edit the php.ini file. For Windows, go to the [mail function] section and modify it as follows:
 
     ```ini
@@ -79,6 +79,6 @@ const DB_HOST = "your DB Host", // "localhost" for local server
       force_sender= your email address
     ```
 
-5. Run the project on a server.
+6. Run the project on a server.
 
 
