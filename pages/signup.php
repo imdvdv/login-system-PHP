@@ -1,10 +1,9 @@
 <?php
 
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/session.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/config.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/db-connection.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/auth-token.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/helpers.php";
+include_once __DIR__ . "/../src/config/env.php";
+include_once __DIR__ . "/../src/db-connection.php";
+include_once __DIR__ . "/../src/auth-token.php";
+include_once __DIR__ . "/../src/helpers.php";
 
 if (isAuthorized()){
     header("Location: /pages/profile.php");
@@ -13,11 +12,11 @@ if (isAuthorized()){
 ?>
 <!DOCTYPE html>
 <html>
-<?php require_once "{$_SERVER["DOCUMENT_ROOT"]}/components/head.html";?>
+<?php require_once __DIR__ . "/../components/head.html";?>
 <body>
 <div class="container container_form">
     <h3 class="title">Registration</h3>
-    <?php require_once "{$_SERVER["DOCUMENT_ROOT"]}/components/message.php";?>
+    <?php require_once __DIR__ . "/../components/message.php";?>
     <form action="/src/actions/register.php" method="post" name="form_signup" class="form form_signup" id="form_signup">
         <div class="form__field form__field_name <?php echo addInvalidClass("name");?>">
             <div class="form__input form__input_name">

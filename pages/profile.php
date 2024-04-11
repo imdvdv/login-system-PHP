@@ -1,10 +1,9 @@
 <?php
 
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/session.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/config.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/db-connection.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/auth-token.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/helpers.php";
+include_once __DIR__ . "/../src/config/env.php";
+include_once __DIR__ . "/../src/db-connection.php";
+include_once __DIR__ . "/../src/auth-token.php";
+include_once __DIR__ . "/../src/helpers.php";
 
 if (isAuthorized()){
     if (isset($_SESSION["user"]["name"], $_SESSION["user"]["email"]) && !empty($_SESSION["user"]["name"]) && !empty($_SESSION["user"]["email"])){
@@ -13,11 +12,11 @@ if (isAuthorized()){
 ?>
 <!DOCTYPE html>
 <html>
-<?php require_once "{$_SERVER["DOCUMENT_ROOT"]}/components/head.html";?>
+<?php require_once __DIR__ . "/../components/head.html";?>
 <body>
     <div class="container container_profile">
         <h3 class="title">Profile editor</h3>
-        <?php require_once "{$_SERVER["DOCUMENT_ROOT"]}/components/message.php";?>
+        <?php require_once __DIR__ . "/../components/message.php";?>
         <div class="profile profile_editor">
             <div class="profile__layout">
                 <div class="avatar">

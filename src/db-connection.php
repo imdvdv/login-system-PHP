@@ -8,7 +8,7 @@ function getMysqli(): mysqli {
         mysqli_options($mysqli,MYSQLI_OPT_INT_AND_FLOAT_NATIVE, 1);
         return $mysqli;
     } catch (mysqli_sql_exception $e) {
-        header("HTTP/1.1 500 Internal Server Error");
+        http_response_code(500);
         die("Connection failed: ". $e->getMessage());
     }
 }
@@ -21,7 +21,7 @@ function executeQueryDB (mysqli $mysqli, string $query, array $values, string $t
         mysqli_stmt_execute($stmt);
         return $stmt;
     } catch(mysqli_sql_exception $e){
-        header("HTTP/1.1 500 Internal Server Error");
+        http_response_code(500);
         die("Connection failed: ". $e->getMessage());
     }
 }

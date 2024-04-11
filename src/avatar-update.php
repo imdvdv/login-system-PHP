@@ -18,12 +18,11 @@ function avatarUpdate (int $userID, array $file = null): void {
     $values = [$userID];
     $stmt = executeQueryDB($mysqli, $query, $values, "i");
     $result = mysqli_stmt_get_result($stmt);
-    $dataDB = mysqli_fetch_assoc($result);
+    $dataDB = mysqli_fetch_assoc($result); // extract user avatar path from the database
 
-    //if ($stmt->rowCount() == 1){
     if ($dataDB){
         $avatarPathDB = $dataDB["avatar_path"];
-        //$avatarPathDB = $stmt->fetchColumn(); // extract user avatar path from the database
+
         if ($avatarPathDB) {
             unlink("{$_SERVER["DOCUMENT_ROOT"]}$avatarPathDB"); // delete avatar file
         }

@@ -1,10 +1,9 @@
 <?php
 
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/session.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/config.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/helpers.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/avatar-update.php";
-include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/db-connection.php";
+include_once __DIR__ . "/../config/env.php";
+include_once __DIR__ . "/../helpers.php";
+include_once __DIR__ . "/../avatar-update.php";
+include_once __DIR__ . "/../db-connection.php";
 
 $method = $_SERVER["REQUEST_METHOD"];
 

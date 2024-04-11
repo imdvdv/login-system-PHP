@@ -1,5 +1,17 @@
 <?php
 
+// SESSION config
+ini_set("session.use_strict_mode", 1);
+ini_set("session.use_only_cookies", 1);
+
+session_set_cookie_params([
+    "path" => "/",
+    "httponly" => true,
+    "secure" => true,
+    "samesite" => "lax"
+]);
+session_start();
+
 // Connecting to the database
 const DB_HOST = "yourDbHost", // "localhost" for local server
 DB_NAME = "yourDbName",
