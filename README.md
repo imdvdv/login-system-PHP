@@ -47,16 +47,18 @@ To use this project, follow these steps:
 
 ```php
  // Connecting to the database
-const DB_HOST = "your DB Host", // "localhost" for local server
-    DB_NAME = "your DB Name", 
-    DB_USERNAME = "your DB UserName", // "root" for phpMyAdmin
-    DB_PASSWORD = "your DB Password", // "password" or "" for phpMyAdmin
+const DB_HOST = "{your DB Host}", // "localhost" for local server
+    DB_NAME = "{your DB Name}", 
+    DB_USERNAME = "{your DB UserName}", // "root" for phpMyAdmin
+    DB_PASSWORD = "{your DB Password}", // "password" or "" for phpMyAdmin
     DB_PORT = "3306";
 ```
 4. Configure email sending using sendmail.
-    4.1 Configure the email settings in the access-recovery.php file.
+   
+    4.1 Paste YOUR HOST value or domain name your project into the address bar in the access-recovery.php file.(localhost for example)
     ```php
-      $headers = "From: YOUR SENDER EMAIL ADDRESS\r\n";
+      // Generate and send an email with a link to the password change page using the built-in mail function
+      $message = 'To reset a password and create new - <a href="http://{YOUR HOST}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
     ```
     4.2 Download and unzip the sendmail.zip from a trusted source if it doesn't exist in your development environment.
    
@@ -80,5 +82,16 @@ const DB_HOST = "your DB Host", // "localhost" for local server
     ```
 
 6. Run the project on a server.
+
+### Images
+![signup page](https://github.com/imdvdv/PHP-Login-system/blob/master/signup.png)
+![signup page with errors](https://github.com/imdvdv/PHP-Login-system/blob/master/signup-failure.png)
+![login page](https://github.com/imdvdv/PHP-Login-system/blob/master/login.png)
+![recovery page](https://github.com/imdvdv/PHP-Login-system/blob/master/recovery.png)
+![change password page](https://github.com/imdvdv/PHP-Login-system/blob/master/change-password.png)
+![profile page image1](https://github.com/imdvdv/PHP-Login-system/blob/master/profile1.png)
+![profile page image2](https://github.com/imdvdv/PHP-Login-system/blob/master/profile2.png)
+![profile page image3](https://github.com/imdvdv/PHP-Login-system/blob/master/profile3.png)
+
 
 
