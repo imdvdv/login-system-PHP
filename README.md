@@ -8,7 +8,6 @@ The main goal of the project is to learn how to implement such functionality and
 
 ### Features
 
-
 * __Registration:__ Users can register by providing a username, password, and email address.
 * __Login:__ Registered users can log in using their username and password.
 * __Remember Me:__ Users can visit his profile after terminating the session and closing the browser without re-entering the password using cookies.
@@ -30,20 +29,10 @@ __External Resources/Plugins__
 
 ### Getting Started 
 
-You can use any local server for development:
-* [OpenServer](https://ospanel.io/)
-* [XAMPP](https://www.apachefriends.org/)
-* [MAMP](https://www.mamp.info/)
-* [Laragon](https://laragon.org/)
-or others.
-
-If you prefer to deploy an environment, you can use [Docker](https://www.docker.com/).
-If you are working on Windows, use [WSL](https://learn.microsoft.com/ru-ru/windows/wsl/install).
-
 To use this project, follow these steps:
 1. Clone the repository to your local machine.
 2. Create a new database and import the database.sql file.
-3. Update the database connection details in the config.php file.
+3. Update the database connection details in the env.php file.
 
 ```php
  // Connecting to the database
