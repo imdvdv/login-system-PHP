@@ -235,7 +235,7 @@ body{
     margin-bottom: 50px;
 }
 
-.drop-menu{
+.dropdown{
     position: absolute;
     display: none;
     min-width: 130px;
@@ -246,23 +246,23 @@ body{
     box-shadow: 0 0 2px #333;
 }
 
-.drop-menu__button{
+.dropdown__button{
     display: block;
     font-size: 13px;
     cursor: pointer;
     background-color: #fdfdfd;
     color: #333;
-    padding: 5px;
+    padding: 8px 6px;
     border-radius: 3px;
     width: 100%;
     transition: all 0.2s ease;
 }
 
-.drop-menu__button_delete{
+.dropdown__button_delete-avatar{
     color: #d93025;
 }
 
-.drop-menu__button:hover{
+.dropdown__button:hover{
     background-color: #f1f1f1;
 }
 

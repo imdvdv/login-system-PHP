@@ -20,7 +20,23 @@ if (isAuthorized()){
         <?php require_once "{$_SERVER["DOCUMENT_ROOT"]}/components/message.php";?>
         <div class="profile profile_editor">
             <div class="profile__layout">
-                    <?php include_once "{$_SERVER["DOCUMENT_ROOT"]}/components/avatar.php";?>
+                <div class="avatar">
+                    <div class="avatar__content">
+                        <?php showAvatar($userAvatar, 100);?>
+                        <ul class="dropdown">
+                            <li class="dropdown__option dropdown__option_update">
+                                <button role="button" class="dropdown__button dropdown__button_update-avatar">
+                                    <i class="fa-solid fa-pen-to-square"></i> Update photo
+                                </button>
+                                <?php if($userAvatar){ ?>
+                                    <button role="button" class="dropdown__button dropdown__button_delete-avatar">
+                                        <i class="fa-solid fa-trash"></i> Delete photo
+                                    </button>
+                                <?php } ?>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="profile__info">
                     <form action="/src/actions/edit-profile.php" method="post" name="form_editor" class="form form_editor" id="form_editor" enctype="multipart/form-data">
                         <div class="form__field form__field_avatar file <?php echo addInvalidClass("avatar");?>">
