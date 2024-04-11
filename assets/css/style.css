@@ -321,7 +321,7 @@ body{
 }
 
 .show {
-    display: flex;
+    display: block;
 }
 
 
