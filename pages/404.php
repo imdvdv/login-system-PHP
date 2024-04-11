@@ -7,7 +7,7 @@ include_once "{$_SERVER["DOCUMENT_ROOT"]}/src/configs/session.php";
 <body>
     <div class="container">
         <h3 class="title" style="text-decoration-color: #d93025">404</h3>
-        <div class="message failure">
+        <div class="message show failure">
             <p class="message-text">
                 <?php
                 if(isset($_SESSION["response"]["message"]) && !empty($_SESSION["response"]["message"])) {
