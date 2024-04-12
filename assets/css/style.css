@@ -258,7 +258,7 @@ body{
     transition: all 0.2s ease;
 }
 
-.dropdown__button_delete-avatar{
+.dropdown__button_delete{
     color: #d93025;
 }
 
@@ -290,7 +290,7 @@ body{
     margin: 0 15px;
 }
 
-.avatar__content:hover > .drop-menu{
+.avatar__content:hover > .dropdown{
     display: initial;
 }
 

@@ -6,9 +6,10 @@ include_once __DIR__ . "/../src/auth-token.php";
 include_once __DIR__ . "/../src/helpers.php";
 
 if (isAuthorized()){
-    if (isset($_SESSION["user"]["name"], $_SESSION["user"]["email"]) && !empty($_SESSION["user"]["name"]) && !empty($_SESSION["user"]["email"])){
-        $user_name = $_SESSION["user"]["name"];
-        $user_email = $_SESSION["user"]["email"];
+    if (isset($_SESSION["user"]["name"], $_SESSION["user"]["email"], $_SESSION["user"]["avatar"]) && !empty($_SESSION["user"]["name"]) && !empty($_SESSION["user"]["email"])){
+        $userName = $_SESSION["user"]["name"];
+        $userEmail = $_SESSION["user"]["email"];
+        $userAvatar = $_SESSION["user"]["avatar"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,18 +23,17 @@ if (isAuthorized()){
                 <div class="avatar">
                     <div class="avatar__content">
                         <?php showAvatar($userAvatar, 100);?>
-                        <ul class="dropdown">
-                            <li class="dropdown__option dropdown__option_update">
-                                <button role="button" class="dropdown__button dropdown__button_update-avatar">
-                                    <i class="fa-solid fa-pen-to-square"></i> Update photo
-                                </button>
-                                <?php if($userAvatar){ ?>
-                                    <button role="button" class="dropdown__button dropdown__button_delete-avatar">
-                                        <i class="fa-solid fa-trash"></i> Delete photo
-                                    </button>
-                                <?php } ?>
-                            </li>
-                        </ul>
+                        <?php if($userAvatar){ ?>
+                            <ul class="dropdown">
+                                <li class="dropdown__option dropdown__option_update">
+                                    <form action="/src/actions/delete-avatar.php" class="dropdown__action" method="post">
+                                        <button role="button" class="dropdown__button dropdown__button_delete" name="button_delete-avatar">
+                                            <i class="fa-solid fa-trash"></i> Delete photo
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="profile__info">
@@ -48,14 +48,14 @@ if (isAuthorized()){
                         <div class="form__field form__field_name <?php echo addInvalidClass("name");?>">
                             <div class="form__input form__input_name">
                                 <label for="name" class="form__label">Name</label>
-                                <input type="text" class="form__input-value" id="name" name="name" value="<?php echo getOldValue("name", $user_name);?>" autocomplete="off">
+                                <input type="text" class="form__input-value" id="name" name="name" value="<?php echo getOldValue("name", $userName);?>" autocomplete="off">
                             </div>
                             <?php showError("name");?>
                         </div>
                         <div class="form__field form__field_email <?php echo addInvalidClass("email");?>">
                             <div class="form__input form__input_email">
                                 <label for="email" class="form__label">Email</label>
-                                <input type="text" class="form__input-value" id="email" name="email" value="<?php echo getOldValue("email", $user_email);?>" autocomplete="off">
+                                <input type="text" class="form__input-value" id="email" name="email" value="<?php echo getOldValue("email", $userEmail);?>" autocomplete="off">
                             </div>
                             <?php showError("email");?>
                         </div>
