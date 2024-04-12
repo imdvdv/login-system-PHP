@@ -6,7 +6,7 @@ include_once __DIR__ . "/../src/auth-token.php";
 include_once __DIR__ . "/../src/helpers.php";
 
 if (isAuthorized()){
-    if (isset($_SESSION["user"]["name"], $_SESSION["user"]["email"], $_SESSION["user"]["avatar"]) && !empty($_SESSION["user"]["name"]) && !empty($_SESSION["user"]["email"])){
+    if (isset($_SESSION["user"]["name"], $_SESSION["user"]["email"]) && !empty($_SESSION["user"]["name"]) && !empty($_SESSION["user"]["email"])){
         $userName = $_SESSION["user"]["name"];
         $userEmail = $_SESSION["user"]["email"];
         $userAvatar = $_SESSION["user"]["avatar"];
