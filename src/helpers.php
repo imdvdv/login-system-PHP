@@ -85,8 +85,8 @@ function fileUpload (array $file, string $extendedPath = null) :string|false {
         $absoluteUploadPath = "$absoluteUploadPath/$extendedPath";
     }
     // Check the uploads directory exist and make it if it's not
-    if (!is_dir($relativeUploadPath)){
-        mkdir($relativeUploadPath, 0777, true);
+    if (!is_dir($absoluteUploadPath)){
+        mkdir($absoluteUploadPath, 0777, true);
     }
     // Prepare the file data
     $fileExtension = pathinfo($file["name"], PATHINFO_EXTENSION);
