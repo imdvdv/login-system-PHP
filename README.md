@@ -41,7 +41,7 @@ To use this project, follow these steps:
     ```php
      // Database params
     const DB_HOST = "your DB Host", 
-        DB_NAME = "your DB Name", // "login_system" if you decide to use the database dump attached to the project
+        DB_NAME = "your DB Name",
         DB_USERNAME = "your DB UserName", 
         DB_PASSWORD = "your DB Password",
         DB_PORT = "3306";
@@ -53,9 +53,9 @@ To use this project, follow these steps:
       // Generate and send an email with a link to the password change page using the built-in mail function
       $message = 'To reset a password and create new - <a href="http://{YOUR_DOMAIN}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
     ```
-    3.2 Download and unzip the sendmail.zip from a trusted source if it doesn't exist in your development environment.
+    3.2 Download and unzip the `sendmail.zip` from a trusted source if it doesn't exist in your development environment.
    
-    3.3 Edit the php.ini file. For Windows, go to the [mail function] section and modify it as follows:
+    3.3 Edit the `php.ini` file. For Windows, go to the [mail function] section and modify it as follows:
 
     ```ini
       [mail function]
@@ -64,7 +64,7 @@ To use this project, follow these steps:
       sendmail_from = your email address
       sendmail_path = your path to the sendmail.exe file 
     ```
-    3.4 Configure the SMTP, smtp server username, password, and port in the sendmail.ini file.
+    3.4 Configure the SMTP, smtp server username, password, and port in the `sendmail.ini` file.
     ```ini
       [sendmail]
       smtp_server= your smtp server
