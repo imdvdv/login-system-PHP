@@ -40,7 +40,6 @@ if (isset($_GET["code"]) && !empty($_GET["code"]) && checkResetCode($_GET["code"
 <?php
     removeResponseSession();
 } else {
-    $_SESSION["response"]["message"] = "Link is incorrect or expire";
-    header("Location: /pages/404.php");
+    openErrorPage(404, "Link is incorrect or expire");
     exit;
 } ?>

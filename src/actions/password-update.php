@@ -67,8 +67,7 @@ if ($method === "POST"){
             }
         } else {
             $_SESSION["response"]["status"] = "failure";
-            $_SESSION["response"]["message"] = "Link is incorrect or expire";
-            header("Location: /pages/404.php");
+            openErrorPage(404, "Link is incorrect or expire");
             exit;
         }
     }
