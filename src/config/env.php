@@ -7,16 +7,14 @@ ini_set("session.use_only_cookies", 1);
 session_set_cookie_params([
     "path" => "/",
     "httponly" => true,
-    "secure" => true,
-    "samesite" => "lax"
 ]);
 session_start();
 
 // Connecting to the database
-const DB_HOST = "yourDbHost", // "localhost" for local server
+const DB_HOST = "yourDbHost", 
 DB_NAME = "yourDbName",
-DB_USERNAME = "yourDbUserName", // "root" for phpMyAdmin
-DB_PASSWORD = "yourDbPassword", // "password" or "" for phpMyAdmin
+DB_USERNAME = "yourDbUserName", 
+DB_PASSWORD = "yourDbPassword",
 DB_PORT = "3306";
 
 // Constants of time
