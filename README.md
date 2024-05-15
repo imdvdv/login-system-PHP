@@ -26,41 +26,45 @@ __Languages__
 
 __External Resources/Plugins__
 * Font awesome-6.4.0
+* Google Fonts
 
 ### Getting Started 
 
 To use this project, follow these steps:
 1. Clone the repository to your local machine.
-2. Create a new database and import the database.sql file.
-3. Update the database connection details in the env.php file.
+2. Configure Database.
 
-```php
- // Connecting to the database
-const DB_HOST = "{your DB Host}", // "localhost" for local server
-    DB_NAME = "{your DB Name}", 
-    DB_USERNAME = "{your DB UserName}", // "root" for phpMyAdmin
-    DB_PASSWORD = "{your DB Password}", // "password" or "" for phpMyAdmin
-    DB_PORT = "3306";
-```
-4. Configure email sending using sendmail.
+   2.1 Create a new database with name `login_system` and import the prepared dump file `src/config/login_system.sql`.
+
+   2.2 Edit the database connection details in the `src/config/env.php` file.
+
+    ```php
+     // Database params
+    const DB_HOST = "your DB Host", 
+        DB_NAME = "your DB Name",
+        DB_USERNAME = "your DB UserName", 
+        DB_PASSWORD = "your DB Password",
+        DB_PORT = "3306";
+    ```
+3. Configure email sending using sendmail.
    
-    4.1 Paste YOUR HOST value or domain name your project into the address bar in the access-recovery.php file.(localhost for example)
+    3.1 Enter YOUR DOMAIN name or localhost into the message variable in the `src/actions/access-recovery.php` file.
     ```php
       // Generate and send an email with a link to the password change page using the built-in mail function
-      $message = 'To reset a password and create new - <a href="http://{YOUR HOST}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
+      $message = 'To reset a password and create new - <a href="http://{YOUR_DOMAIN}/pages/change-password.php?code='.$code.'">click here</a>. </br>Reset your password in a hour.';
     ```
-    4.2 Download and unzip the sendmail.zip from a trusted source if it doesn't exist in your development environment.
+    3.2 Download and unzip the `sendmail.zip` from a trusted source if it doesn't exist in your development environment.
    
-    4.3 Edit the php.ini file. For Windows, go to the [mail function] section and modify it as follows:
+    3.3 Edit the `php.ini` file. For Windows, go to the [mail function] section and modify it as follows:
 
     ```ini
       [mail function]
-      SMTP= your smtp server
-      smtp_port= your port
+      SMTP = your smtp server
+      smtp_port = your port
       sendmail_from = your email address
       sendmail_path = your path to the sendmail.exe file 
     ```
-    4.4 Configure the SMTP, smtp server username, password, and port in the sendmail.ini file.
+    3.4 Configure the SMTP, smtp server username, password, and port in the `sendmail.ini` file.
     ```ini
       [sendmail]
       smtp_server= your smtp server
@@ -69,8 +73,7 @@ const DB_HOST = "{your DB Host}", // "localhost" for local server
       auth_password= your password
       force_sender= your email address
     ```
-
-6. Run the project on a server.
+4. Run the project on a server.
 
 ### Images
 ![signup page](https://github.com/imdvdv/PHP-Login-system/blob/master/signup.png)
@@ -81,6 +84,3 @@ const DB_HOST = "{your DB Host}", // "localhost" for local server
 ![profile page image1](https://github.com/imdvdv/PHP-Login-system/blob/master/profile1.png)
 ![profile page image2](https://github.com/imdvdv/PHP-Login-system/blob/master/profile2.png)
 ![profile page image3](https://github.com/imdvdv/PHP-Login-system/blob/master/profile3.png)
-
-
-
